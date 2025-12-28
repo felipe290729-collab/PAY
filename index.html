@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Payment</title>
+
+  <!-- Font Anime -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #ff7ac8, #7b5cff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 380px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 0 25px rgba(255, 120, 200, 0.6);
+      color: #fff;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .qris img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 0 18px rgba(255,255,255,0.4);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #ff9adf, #9b7bff);
+      box-shadow: 0 0 12px rgba(255,255,255,0.6);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(255,255,255,0.9);
+    }
+
+    .copy-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .copy-box input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 12px;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .copy-box button {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, #7bffda, #6fa8ff);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>✨ Anime Payment ✨</h2>
+    <div class="name">a.n Hendra Wijaya Kusuma</div>
+
+    <!-- QRIS -->
+    <div class="section qris">
+      <h3>💖 QRIS</h3>
+      <img src="qris.png" alt="QRIS">
+      <a href="qris.png" download>
+        <button class="btn">Simpan QRIS</button>
+      </a>
+    </div>
+
+    <!-- DANA -->
+    <div class="section">
+      <h3>💙 DANA</h3>
+      <div class="copy-box">
+        <input type="text" value="081223823892" id="dana" readonly>
+        <button onclick="copyText('dana')">Copy</button>
+      </div>
+    </div>
+
+    <!-- GOPAY -->
+    <div class="section">
+      <h3>💚 GOPAY</h3>
+      <div class="copy-box">
+        <input type="text" value="081223823892" id="gopay" readonly>
+        <button onclick="copyText('gopay')">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyText(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("✨ Nomor berhasil disalin ✨");
+    }
+  </script>
+
+</body>
+</html>
